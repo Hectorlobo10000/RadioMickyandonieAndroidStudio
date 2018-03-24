@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "472683880330",
+    "firebase_url": "https://radiomickyandonieapp-1f0d8.firebaseio.com",
+    "project_id": "radiomickyandonieapp-1f0d8",
+    "storage_bucket": "radiomickyandonieapp-1f0d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:472683880330:android:a0d54e1aa582c542",
+        "android_client_info": {
+          "package_name": "com.example.lobo.radiomickyandonie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "472683880330-h9c8ejsh6vkbpkustshq3qpludjdsq4g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lobo.radiomickyandonie",
+            "certificate_hash": "57c28a9f9eed81729f1696b800703f498ef8bb28"
+          }
+        },
+        {
+          "client_id": "472683880330-b1qm4pr7d33pjhrhcrltmpo4m6kgroo7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbp62VSoeU60ahmXl7cNpvhCZyAO2OVvA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "472683880330-b1qm4pr7d33pjhrhcrltmpo4m6kgroo7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

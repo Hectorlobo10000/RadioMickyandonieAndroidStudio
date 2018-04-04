@@ -7,7 +7,7 @@ import java.util.Hashtable;
  */
 
 public class SetupChannel {
-    public static ChannelFactory GetFactory(final Hashtable hashtable) {
+    public static ChannelFactory getFactory(final Hashtable hashtable) {
         return new ChannelFactory(new Hashtable<String, IChannel>(){{
             put("english", new English(hashtable));
             put("spanish", new Spanish(hashtable));

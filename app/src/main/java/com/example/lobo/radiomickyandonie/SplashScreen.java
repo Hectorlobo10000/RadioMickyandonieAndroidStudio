@@ -3,7 +3,10 @@ package com.example.lobo.radiomickyandonie;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+
+import com.google.firebase.auth.FirebaseUser;
 
 import gr.net.maroulis.library.EasySplashScreen;
 
@@ -16,14 +19,9 @@ public class SplashScreen extends AppCompatActivity {
         EasySplashScreen config = new EasySplashScreen(SplashScreen.this)
                 .withFullScreen()
                 .withTargetActivity(Login.class)
-                .withSplashTimeOut(5000)
-                .withBackgroundColor(Color.parseColor("#074E72"))
-                .withLogo(R.mipmap.ic_launcher)
-                .withHeaderText("Bienvenido")
-                .withFooterText("Otro proyecto más de Honduras en sus manos");
-
-        config.getHeaderTextView().setTextColor(android.graphics.Color.WHITE);
-        config.getFooterTextView().setTextColor(android.graphics.Color.WHITE);
+                .withSplashTimeOut(2000)
+                .withBackgroundColor(Color.parseColor("#3F51B5"))
+                .withLogo(R.drawable.logo_web);
 
         View view = config.create();
 

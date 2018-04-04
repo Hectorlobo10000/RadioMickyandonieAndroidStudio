@@ -13,7 +13,7 @@ public class ChannelFactory {
         this.channel = player;
     }
 
-    public IChannel CreateChannel(String channel) {
+    public IChannel getCreateChannel(String channel) {
         return this.channel.get(channel);
     }
 }

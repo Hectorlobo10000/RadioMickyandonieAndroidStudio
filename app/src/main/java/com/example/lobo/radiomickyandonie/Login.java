@@ -4,8 +4,12 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -22,13 +26,16 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import library.radiomickyandonie.model.User;
 
 public class Login extends AppCompatActivity {
-    SignInButton signInButton;
-    FirebaseAuth auth;
-    private final static int RC_SIGN_IN = 2;
-    GoogleApiClient mGoogleApiClient;
-    FirebaseAuth.AuthStateListener authListener;
+    private SignInButton signInButton;
+    private FirebaseAuth auth;
+    private final static int RC_SIGN_IN = 1;
+    private GoogleApiClient mGoogleApiClient;
+    private FirebaseAuth.AuthStateListener authListener;
 
     @Override
     protected void onStart() {
@@ -39,9 +46,16 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /*requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);*/
         setContentView(R.layout.activity_login);
 
-        signInButton = (SignInButton) findViewById(R.id.sign_in_button);
+        TextView titleToolbar = findViewById(R.id.toolbar_text);
+        titleToolbar.setText("Bienvenido");
+        Toolbar toolbar = findViewById(R.id.toolbar_login);
+        setSupportActionBar(toolbar);
+
+        signInButton = findViewById(R.id.sign_in_button);
         auth = FirebaseAuth.getInstance();
 
         signInButton.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +68,12 @@ public class Login extends AppCompatActivity {
         authListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if(firebaseAuth.getCurrentUser() != null) {
+                FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+                if(currentUser != null) {
+                    User user = new User(currentUser.getDisplayName(),
+                            currentUser.getEmail(), true);
+                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+                    db.collection("users").document(user.getEmail()).set(user);
                     startActivity(new Intent(Login.this, MainActivity.class));
                 }
             }
@@ -94,7 +113,7 @@ public class Login extends AppCompatActivity {
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
             } else {
-                Toast.makeText(Login.this, "Auth went wrong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Login.this, "Auth went wrong" + result.getStatus().toString(), Toast.LENGTH_SHORT).show();
             }
         }
     }

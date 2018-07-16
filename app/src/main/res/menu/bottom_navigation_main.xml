@@ -6,14 +6,14 @@
         android:id="@+id/action_english"
         android:enabled="true"
         android:icon="@drawable/ic_music"
-        android:title="Clásicos en Ingles"
+        android:title="MI MÚSICA DEL SIGLO XX"
         app:showAsAction="ifRoom"/>
 
-    <item
+    <!--<item
         android:id="@+id/action_spanish"
         android:enabled="true"
         android:icon="@drawable/ic_music"
         android:title="Clásicos en Español"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom"/>-->
 
 </menu>

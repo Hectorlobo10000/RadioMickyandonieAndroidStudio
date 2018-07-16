@@ -183,14 +183,14 @@ public class MainActivity extends AppCompatActivity {
                         channelEnglish.prepare();
                         channelEnglish.start();
                         playOrPause.setImageResource(R.mipmap.ic_pause);
-                        Toast.makeText(MainActivity.this, "Éxitos en Ingles", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "MI MÚSICA DEL SIGLO XX", Toast.LENGTH_SHORT).show();
                         break;
-                    case R.id.action_spanish:
+                    /*case R.id.action_spanish:
                         channelSpanish.prepare();
                         channelSpanish.start();
                         playOrPause.setImageResource(R.mipmap.ic_pause);
                         Toast.makeText(MainActivity.this, "Éxitos en Español", Toast.LENGTH_SHORT).show();
-                        break;
+                        break;*/
                 }
                 MediaPlayer mediaPlayer = (MediaPlayer) mediaDictionary.get("player");
                 if(mediaPlayer.getMedia() != null){

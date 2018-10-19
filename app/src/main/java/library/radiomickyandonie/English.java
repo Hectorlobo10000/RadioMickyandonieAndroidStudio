@@ -20,7 +20,7 @@ public class English implements IChannel {
     public English(Hashtable hashtable) {
         this.mediaPlayer = (MediaPlayer) hashtable.get("player");
         this.libVLC = (LibVLC) hashtable.get("libVLC");
-        this.media = new Media(this.libVLC, Uri.parse("http://167.114.13.24:9990/"));
+        this.media = new Media(this.libVLC, Uri.parse("http://54.39.114.98:9968/"));
     }
 
     @Override

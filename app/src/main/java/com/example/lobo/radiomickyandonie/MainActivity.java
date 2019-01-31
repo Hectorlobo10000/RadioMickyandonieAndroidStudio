@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private List<DocumentSnapshot> allUsers;
     private TextView counterAllUsers;
 
-    @Override
+    /*@Override
     protected void onStart() {
         super.onStart();
         auth.addAuthStateListener(authListener);
@@ -96,9 +96,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-    }
+    }*/
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_sign_out:
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -129,11 +129,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        auth = FirebaseAuth.getInstance();
-        db = FirebaseFirestore.getInstance();
+        /*auth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();*/
 
         Toolbar myToolbar = findViewById(R.id.toolbar_main);
-        myToolbar.setTitle(auth.getCurrentUser().getDisplayName());
+        /*myToolbar.setTitle(auth.getCurrentUser().getDisplayName());*/
         setSupportActionBar(myToolbar);
 
         counterUsersOnline = findViewById(R.id.users_online);
@@ -143,14 +143,14 @@ public class MainActivity extends AppCompatActivity {
         vusikView.start();
         vusikView.startNotesFall();
 
-        authListener = new FirebaseAuth.AuthStateListener() {
+        /*authListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser() == null) {
                     startActivity(new Intent(MainActivity.this, Login.class));
                 }
             }
-        };
+        };*/
 
         activity = this;
         mediaDictionary = Player.getInstance(activity);
@@ -212,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
 
     }*/
 
-    @Override
+    /*@Override
     protected void onStop() {
         super.onStop();
         FirebaseUser currentUser = auth.getCurrentUser();
@@ -230,5 +230,5 @@ public class MainActivity extends AppCompatActivity {
             db.collection("users").document(currentUser.getEmail())
                     .update("online", true);
         }
-    }
+    }*/
 }

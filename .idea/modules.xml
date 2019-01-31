@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RadioMickyandonie.iml" filepath="$PROJECT_DIR$/RadioMickyandonie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RadioMickyandonieAndroidStudio.iml" filepath="$PROJECT_DIR$/RadioMickyandonieAndroidStudio.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
